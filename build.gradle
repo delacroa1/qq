@@ -17,8 +17,6 @@ task sourcesJar(type: Jar, dependsOn: classes) {
 
 task fatJar(type: Jar){
 		manifest {
-        attributes  
-        	'Main-Class': 'com.mkyong.DateUtils'
     }
     baseName = project.name + '-all'
     from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
